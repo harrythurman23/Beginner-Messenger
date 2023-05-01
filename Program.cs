@@ -14,48 +14,48 @@ namespace Beginner_Messenger
             int on = 1;
             while (on == 1)
             {
-                console.writeline("please make a choice ");
-                console.writeline("a. save a message ");
-                console.writeline("b. retrieve a message ");
-                console.writeline("c. delete a message");
-                console.writeline("d. exit ");
-                string reply = console.readline().tolower();
+                Console.WriteLine("please make a choice ");
+                Console.WriteLine("a. save a message ");
+                Console.WriteLine("b. retrieve a message ");
+                Console.WriteLine("c. delete a message");
+                Console.WriteLine("d. exit ");
+                string reply = Console.ReadLine().ToLower();
 
                 if (reply == "a")
                 {
-                    if (index >= messages.length)
+                    if (index >= messages.Length)
                     {
-                        console.writeline("your messages are full");
+                        Console.WriteLine("your messages are full");
                     }
-                    else if (index < messages.length)
+                    else if (index < messages.Length)
                     {
-                        console.writeline("please leave a message ");
-                        messages[index] = console.readline();
-                        console.writeline("your message number is: " + index);
+                        Console.WriteLine("please leave a message ");
+                        messages[index] = Console.ReadLine();
+                        Console.WriteLine("your message number is: " + index);
                         index = index + 1;
                     }
                 }
                 else if (reply == "b")
 
                 {
-                    console.writeline("please give a message number ");
-                    int id = convert.toint32(console.readline());
+                    Console.WriteLine("please give a message number ");
+                    int id = Convert.ToInt32(Console.ReadLine());
                     if (id > index)
                     {
-                        console.writeline("your message doesn't exists");
+                        Console.WriteLine("your message doesn't exists");
                     }
                     else
                     {
-                        console.writeline(messages[id]);
+                        Console.WriteLine(messages[id]);
                     }
                 }
 
                 else if (reply == "c")
                 {
-                    console.writeline("what is the number of the message you would like to delete?");
-                    int id = convert.toint32(console.readline());
+                    Console.WriteLine("what is the number of the message you would like to delete?");
+                    int id = Convert.ToInt32(Console.ReadLine());
                     messages[id] = "this message doesn't exist";
-                    console.writeline("your message has been deleted");
+                    Console.WriteLine("your message has been deleted");
                 }
 
                 else if (reply == "d")
